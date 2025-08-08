@@ -2,3 +2,5 @@ fastapi
 sqlalchemy
 pandas
 pydantic
+uvicorn
+joblib
