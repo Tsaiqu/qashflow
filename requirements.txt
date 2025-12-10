@@ -4,3 +4,6 @@ pandas
 pydantic
 uvicorn
 joblib
+scikit-learn
+pytest
+httpx

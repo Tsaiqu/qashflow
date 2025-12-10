@@ -1,11 +1,13 @@
-from sqlalchemy import Column, Integer, Float, String
+from sqlalchemy import Column, Integer, Float, String, Date
 from database import Base
 
 
-class Product(Base):
-    __tablename__ = "products"
+class Transaction(Base):
+    __tablename__ = "transactions"
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, index=True)
     category = Column(String, index=True)
-    price = Column(Float)
+    amount = Column(Float)
+    date = Column(Date)
+    transaction_type = Column(String)

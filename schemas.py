@@ -1,18 +1,20 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
+from datetime import date
 
 
-class ProductBase(BaseModel):
+class TransactionBase(BaseModel):
     name: str
     category: str
-    price: float
+    amount: float
+    date: date
+    transaction_type: str
 
 
-class ProductCreate(ProductBase):
+class TransactionCreate(TransactionBase):
     pass
 
 
-class Product(ProductBase):
+class Transaction(TransactionBase):
     id: int
 
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)
